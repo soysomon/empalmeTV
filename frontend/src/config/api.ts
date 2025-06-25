@@ -13,6 +13,3 @@ const PRODUCTION_API_URL = 'https://empalmetv-production.up.railway.app/api';
 // Seleccionar la URL correcta según el entorno
 export const API_BASE_URL = isDevelopment ? DEVELOPMENT_API_URL : PRODUCTION_API_URL;
 
-console.log('Entorno detectado:', isDevelopment ? 'desarrollo' : 'producción');
-console.log('Hostname actual:', window.location.hostname);
-console.log('API URL configurada:', API_BASE_URL);
