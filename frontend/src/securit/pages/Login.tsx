@@ -226,7 +226,7 @@ const Login: React.FC = () => {
         </button>
 
         <div className="main-content">
-          <img src="https://ibb.co/1GPHbrq" alt="Empalme Logo" className="logo" />
+          <img src="https://i.ibb.co/YB1vbckN/logoempalme-TV.png" alt="Empalme TV Logo" className="logo" />
           <h2 className="title">Iniciar sesión en Empalme</h2>
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
@@ -258,7 +258,7 @@ const Login: React.FC = () => {
         </div>
 
         <div className="admin-panel">
-          <img src="https://ibb.co/1GPHbrq" alt="Empalme Logo" className="logo" />
+          <img src="https://i.ibb.co/YB1vbckN/logoempalme-TV.png" alt="Empalme TV Logo" className="logo" />
           <h2 className="title">Iniciar sesión como Administrador</h2>
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
