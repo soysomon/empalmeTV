@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "axios": "^1.10.0",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.522.0",
+    "react-router-dom": "^7.6.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}
