@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, Clock } from 'lucide-react';
 import axios from 'axios';
+import { useApi } from '../hooks/useApi';
 
 interface Video {
   _id: string;
@@ -19,10 +20,11 @@ const Content = () => {
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [error, setError] = useState<string | null>(null);
   const [visibleVideos, setVisibleVideos] = useState(6); // Límite inicial de 6 videos
-
+  const { getApiUrl } = useApi();
+  
   // Obtener videos desde la API
   useEffect(() => {
-    axios.get('http://localhost:5001/api/youtube')
+    axios.get(getApiUrl('/youtube'))
       .then(response => {
         setVideos(response.data);
         if (response.data.length > 0) {
