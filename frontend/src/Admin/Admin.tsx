@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Trash2, Edit } from 'lucide-react';
-import { Link } from 'react-router-dom'; // Para el botón "Volver" (opcional)
+import { Link } from 'react-router-dom';
+import { useApi } from '../hooks/useApi';
 
 interface Video {
   _id: string;
@@ -28,6 +29,8 @@ const Admin: React.FC = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 5;
+  
+  const { getApiUrl } = useApi();
 
   useEffect(() => {
     fetchVideos();
@@ -35,7 +38,7 @@ const Admin: React.FC = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/youtube');
+      const response = await axios.get(getApiUrl('/youtube'));
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -46,14 +49,14 @@ const Admin: React.FC = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5001/api/youtube/${editingId}`, formData);
+        await axios.put(getApiUrl(`/youtube/${editingId}`), formData);
         setEditingId(null);
       } else {
-        await axios.post('http://localhost:5001/api/youtube', formData);
+        await axios.post(getApiUrl('/youtube'), formData);
       }
       setFormData({ url: '', title: '', description: '', category: '', duration: '', publishDate: '', thumbnail: '' });
       fetchVideos();
-      setCurrentPage(1); // Reinicia a la primera página tras agregar/editar
+      setCurrentPage(1);
     } catch (error) {
       console.error('Error saving video:', error);
     }
@@ -74,9 +77,9 @@ const Admin: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5001/api/youtube/${id}`);
+      await axios.delete(getApiUrl(`/youtube/${id}`));
       fetchVideos();
-      if (currentPage > 1 && videos.length <= videosPerPage) setCurrentPage(prev => prev - 1); // Ajusta página si es necesario
+      if (currentPage > 1 && videos.length <= videosPerPage) setCurrentPage(prev => prev - 1);
     } catch (error) {
       console.error('Error deleting video:', error);
     }
@@ -90,7 +93,6 @@ const Admin: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Panel de Administración</h1>
-      {/* Botón opcional para volver a Contenido */}
       <Link to="/content" className="text-blue-500 mb-4 inline-block hover:underline">Volver a Contenido</Link>
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -176,7 +178,6 @@ const Admin: React.FC = () => {
             </li>
           ))}
         </ul>
-        {/* Paginación */}
         <div className="flex justify-center mt-4 space-x-4">
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
