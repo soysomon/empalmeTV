@@ -2,11 +2,11 @@ import React from 'react';
 import { User, Linkedin } from 'lucide-react';
 
 
-import miguelImg from '../../img/miguel-martinez.png';
-import elayniImg from '../../img/elayni-mateo.png';
-import anapatricia from '../../img/ana-patricia-morillo.png';
-import mellisaturbi from '../../img/melissa-turbi.png';
-import edwinturbi from '../../img/edwin-medina.png'
+import miguelImg from '../../img/Post 7 design Conexion Total (Miguel Martínez).png';
+import elayniImg from '../../img/Post 4 design Conexion Total (ELAYNI MATEO).png';
+import anapatricia from '../../img/Post 6 design Conexion Total (Ana Patricia Morrillo).png';
+import mellisaturbi from '../../img/Post 4 design Conexion Total (Melissa Turbi).png';
+import edwinturbi from '../../img/Post 8 design Conexion Total (Edwin Medina).png'
 import teamBanner from '../../img/Banner - web - empalme.png';
 
 const Team = () => {
