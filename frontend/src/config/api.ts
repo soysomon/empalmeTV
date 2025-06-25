@@ -1,6 +1,18 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+// config/api.ts
+// Detectar entorno basado en la URL del navegador
+const isDevelopment = window.location.hostname === 'localhost' ||
+                     window.location.hostname === '127.0.0.1' ||
+                     window.location.hostname === '0.0.0.0' ||
+                     window.location.port === '5173' || // Vite default port
+                     window.location.port === '3000';   // React default port
 
-export const API_BASE_URL = `${API_URL}/api`;
-export const API_URL_BASE = API_URL;
+// URLs de la API
+const DEVELOPMENT_API_URL = 'http://localhost:5001/api';
+const PRODUCTION_API_URL = 'https://empalmetv-production.up.railway.app/api';
 
-console.log('🚀 API URL configurada:', API_URL);
+// Seleccionar la URL correcta según el entorno
+export const API_BASE_URL = isDevelopment ? DEVELOPMENT_API_URL : PRODUCTION_API_URL;
+
+console.log('Entorno detectado:', isDevelopment ? 'desarrollo' : 'producción');
+console.log('Hostname actual:', window.location.hostname);
+console.log('API URL configurada:', API_BASE_URL);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useApi } from '../../hooks/useApi';
 
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -9,11 +10,12 @@ const Login: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const { getApiUrl } = useApi();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', credentials);
+      const response = await axios.post(getApiUrl('/auth/login'), credentials);
       login(response.data.token);
       navigate('/admin');
     } catch (err) {

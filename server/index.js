@@ -16,7 +16,8 @@ const corsOptions = {
     'http://localhost:5173', 
     'http://localhost:3000', 
     'http://localhost:4173', 
-    'https://empalme-tv.vercel.app', 
+    'https://empalme-tv.vercel.app',  // Tu frontend en Vercel
+    'https://empalme-tv.vercel.app/', // Con slash final también
     process.env.FRONTEND_URL 
   ].filter(Boolean), 
   credentials: true,
@@ -32,7 +33,8 @@ app.get('/', (req, res) => {
   res.json({ 
     message: 'API de Empalme TV funcionando correctamente',
     environment: process.env.NODE_ENV || 'development',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    allowedOrigins: corsOptions.origin
   });
 });
 
@@ -50,4 +52,5 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
   console.log(`🌍 Entorno: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 Orígenes permitidos:`, corsOptions.origin);
 });
