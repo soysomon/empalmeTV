@@ -13,32 +13,32 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Miguel Martínez',
-      role: 'Productor Ejecutivo y Presentador',
-      bio: 'Periodista veterano con más de 15 años de experiencia en análisis político y periodismo de investigación. Miguel lidera nuestra visión editorial y presenta nuestros segmentos principales de comentario político.',
+      role: 'Ingeniero en Redes y Telecomunicaciones',
+      bio: 'Una mente técnica con visión estratégica. Combina el conocimiento avanzado en tecnologías emergentes con habilidades comunicacionales y liderazgo político, creando un perfil integral capaz de analizar, comunicar y actuar con precisión en escenarios digitales y sociales. Un profesional del futuro que entiende el poder de la información, la seguridad y la palabra.',
       image: miguelImg,
     },
     {
       name: 'Elayni Mateo',
-      role: 'Directora de Noticias',
-      bio: 'Directora de noticias galardonada con experiencia en asuntos actuales y cobertura de noticias de última hora. Elayni asegura que nuestros segmentos noticiosos mantengan los más altos estándares de precisión y puntualidad.',
+      role: 'Licenciada en comunicación social',
+      bio: 'Especialista en conectar marcas, mensajes y audiencias con propósito. Su formación académica de alto nivel, combinada con una visión estratégica y dominio del lenguaje, la posicionan como una profesional integral capaz de liderar procesos comunicacionales con enfoque, creatividad y resultados. Una voz con autoridad, una mente con estrategia.',
       image: elayniImg,
     },
     {
       name: 'Ana Patricia Morrillo',
-      role: 'Editora de Entretenimiento y Cultura',
-      bio: 'Fuerza creativa detrás de nuestra programación de entretenimiento con un ojo agudo para las tendencias culturales. Ana Patricia aporta perspectivas frescas a nuestro contenido de entretenimiento y estilo de vida.',
+      role: 'Licenciada en comunicación social',
+      bio: 'Destacada por su excelencia académica y su talento en el manejo de la palabra, combina conocimiento, carisma y profesionalismo en cada presentación. Su voz transmite confianza, su estilo deja huella, y su capacidad para conectar con el público la convierte en una figura indispensable en medios, eventos y escenarios de alto nivel.',
       image: anapatricia,
     },
     {
       name: 'Melissa Turbi',
-      role: 'Gerente de Redes Sociales',
-      bio: 'Experta en marketing digital especializada en estrategia de redes sociales y participación de audiencia. Melissa asegura que nuestro contenido llegue y resuene con nuestra creciente comunidad en línea.',
+      role: 'Licenciada en comunicación social',
+      bio: 'Con una voz que conecta y una presencia que impacta, combina la técnica del periodismo con el arte de la locución para informar, emocionar y cautivar audiencias. Su formación integral y versatilidad la posicionan como una figura destacada en medios, eventos y campañas comerciales. Más que una comunicadora, es una narradora de historias con propósito.',
       image: mellisaturbi,
     },
     {
       name: 'Edwin Medina',
-      role: 'Director Técnico',
-      bio: 'Genio técnico detrás de nuestras operaciones de transmisión con amplia experiencia en producción televisiva. Edwin asegura la entrega impecable de nuestro contenido a través de todas las plataformas.',
+      role: 'Licenciado en Derecho',
+      bio: 'Con una sólida trayectoria en medios de comunicación, se ha consolidado como una voz influyente y un referente en temas sociales, legales y políticos. Su visión estratégica, capacidad de análisis y don de liderazgo lo convierten en un actor clave en la construcción de opinión y toma de decisiones. Más que experiencia, aporta compromiso, credibilidad y pasión por servir.',
       image: edwinturbi,
     },
   ];

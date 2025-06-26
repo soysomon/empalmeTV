@@ -29,8 +29,8 @@ const Contact = () => {
   const socialLinks = [
     { name: 'YouTube', icon: Youtube, url: 'https://www.youtube.com/@Empalmetv22', color: 'hover:text-red-500 bg-red-50 hover:bg-red-100' },
     { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/empalmetv22', color: 'hover:text-blue-400 bg-blue-50 hover:bg-blue-100' },
-    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/emplametv22', color: 'hover:text-pink-500 bg-pink-50 hover:bg-pink-100' },
-    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/empalmetv22', color: 'hover:text-blue-600 bg-blue-50 hover:bg-blue-100' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/empalmetv22?igsh=MmQ2MjhsNWc5dnZj', color: 'hover:text-pink-500 bg-pink-50 hover:bg-pink-100' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/share/16xDYTqgHG', color: 'hover:text-blue-600 bg-blue-50 hover:bg-blue-100' },
   ];
 
   return (
