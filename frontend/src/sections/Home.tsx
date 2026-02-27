@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Play, ChevronDown, Sparkles, TrendingUp, Users, Award } from 'lucide-react';
+import { Play, ChevronDown, Sparkles, TrendingUp, Users, Award, Radio } from 'lucide-react';
+
+const LIVE_URL = 'https://soportedvbclick.ddns.net/broadcaster/empalmetv/hybrid/player';
 import { gsap } from 'gsap';
 import logo from '../../img/logoempalmeTV.png';
 
@@ -136,7 +138,25 @@ const Home = () => {
             </div>
 
             {/* Enhanced CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 flex-wrap">
+              {/* EN VIVO - Primary CTA */}
+              <a
+                href={LIVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-red-600 hover:bg-red-700 text-white font-bold px-10 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl shadow-red-600/40 hover:shadow-red-600/60"
+              >
+                <div className="flex items-center space-x-3">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                  </span>
+                  <Radio className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg tracking-wide">VER EN VIVO</span>
+                </div>
+                <div className="absolute inset-0 bg-red-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
+              </a>
+
               <button
                 onClick={scrollToContent}
                 className="group relative bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-gray-900 font-bold px-10 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl shadow-yellow-400/25 hover:shadow-yellow-400/40"
@@ -148,7 +168,7 @@ const Home = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-amber-400 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
               </button>
-              
+
               <button
                 onClick={scrollToAbout}
                 className="group relative border-2 border-yellow-400/50 text-yellow-400 hover:bg-yellow-400/10 backdrop-blur-sm font-semibold px-10 py-4 rounded-2xl transition-all duration-300 hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/20"
